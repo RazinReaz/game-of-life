@@ -20,7 +20,7 @@ let MODE = {
 var currentMode = MODE.EDIT;
 
 let grid = [];
-let g_machine_idx = -1;
+let g_machine_idx = 0;
 
 
 
@@ -105,9 +105,9 @@ function drawMachine(machine_index) {
   let design = machine.design;
   let x = floor((GRID_COLUMNS - machine.width) / 2);
   let y = floor((GRID_ROWS - machine.height) / 2);
-  for (let i = 0; i < height; i++) {
-    for (let j = 0; j < width; j++) {
-      if (design[i][j] === 'O') {
+  for (let i = 0; i < machine.height; i++) {
+    for (let j = 0; j < machine.width; j++) {
+      if (design[i][j] === "O") {
         let cell_x = x + j;
         let cell_y = y + i;
         aliven(grid, cell_y, cell_x);
@@ -198,7 +198,8 @@ function countAliveNeighbours(grid, y, x) {
 
 function setup() {
   createCanvas(BOARD_WIDTH, BOARD_HEIGHT);
-  createNewGrid();
+  // createNewGrid();
+  drawMachine(0);
 }
 
 function draw() {

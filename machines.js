@@ -83,7 +83,7 @@ machines = [
         '...........OOO....................',
     ],
     width: 34,
-    height: 29,
+    height: 28,
   },
   {
     name:'backward space rake',
@@ -156,3 +156,4 @@ machines = [
     height: 13,
   }
 ];
+
